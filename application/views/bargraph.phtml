@@ -20,14 +20,13 @@
                         /
                         <span class="remaining"><?php echo $bar->remaining; ?></span>
                     </div>
-                    <div class='view' id='bar_<?php echo $count ?>' style='height: <?php echo $bar_height; ?>px;'></div>
+                    <div class='view' style='height: <?php echo $bar_height; ?>px;'></div>
                 </div>
             <?php
         }
         ?>
   </div>
-    <?php for($j = 0; $j < count($bars); $j++) {
-        $bar = $bars[$j];
+    <?php foreach($bars as $bar) {
         $styles = array();
         $styles[] = 'width: ' . $bar_width . 'px';
         $styles[] = 'padding: ' . $final_padding . 'px';

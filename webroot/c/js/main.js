@@ -67,7 +67,9 @@ require(['jquery','underscore','backbone'], function(){
     function activate_module(id, name, seconds, args) {
       render_module(id, name, args, 1);
       if (seconds > 0) {
-        setInterval("render_module('"+id+"', '"+name+"', '"+args+"', '0')", (seconds * 1000));
+          setInterval(function(){
+              render_module(id, name, args, 0);
+          }, (seconds * 1000));
       }
     }
     

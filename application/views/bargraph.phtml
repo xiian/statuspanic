@@ -1,0 +1,43 @@
+<div>
+    <div class="bars">
+        <?php
+        for($j = 0; $j < count($bars); $j++) {
+            $bar = $bars[$j];
+            $count = $j + 1;
+            $bar_height =  ($bar->height / $max_height) * $_GET['height'];
+            $bar_height = floor($bar_height);
+            $top_offset = $_GET['height'] - $bar_height;
+
+            $styles = array();
+            $styles[] = 'margin-top: ' . $top_offset    . 'px';
+            $styles[] = 'width: '      . $bar_width     . 'px';
+            $styles[] = 'padding: '    . $final_padding . 'px';
+            $style = implode('; ', $styles);
+            ?>
+                <div class='bar' style="<?php echo $style; ?>">
+                    <div class='header'>
+                        <span class="total"><?php echo $bar->height; ?></span>
+                        /
+                        <span class="remaining"><?php echo $bar->remaining; ?></span>
+                    </div>
+                    <div class='view' id='bar_<?php echo $count ?>' style='height: <?php echo $bar_height; ?>px;'></div>
+                </div>
+            <?php
+        }
+        ?>
+  </div>
+    <?php for($j = 0; $j < count($bars); $j++) {
+        $bar = $bars[$j];
+        $styles = array();
+        $styles[] = 'width: ' . $bar_width . 'px';
+        $styles[] = 'padding: ' . $final_padding . 'px';
+        $style = implode('; ', $styles);
+        ?>
+        <div class="bar-title" style="<?php echo $style; ?>">
+            <span class="title">
+                <?php echo $bar->name ?>
+            </span>
+        </div>
+    <?php } ?>
+    <div style="clear:both"></div>
+</div>

@@ -3,6 +3,8 @@
 if ($_SERVER['REQUEST_URI'] != '/') {
     if (substr($_SERVER['REQUEST_URI'], 0, 8) == '/modules') {
         require('../application' . $_SERVER['SCRIPT_URL']);
+    } else {
+        header('HTTP/1.1 404 Not Found');
     }
     die();
 }

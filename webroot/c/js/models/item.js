@@ -1,6 +1,7 @@
 define(['backbone', 'underscore'], function(){
     var Model = Backbone.Model.extend({
         defaults: {
+            banana: 'yay',
             update: 300,
             width: 980,
             args: {}

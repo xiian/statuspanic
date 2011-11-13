@@ -6,7 +6,7 @@
     {
       "name": "bargraph",
       "width": 980,
-      "update": 15,
+      "update": 150,
       "class": "middle",
       "args": {
         "height": 300

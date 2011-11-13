@@ -5,10 +5,8 @@ define(['collections/items','backbone', 'underscore'], function(Items){
             width: '100%'
         },
         initialize: function(options) {
-            this.set({'items': new Items});
-        },
-        parse: function(){
-            console.debug(arguments);
+            // Set up the items properly as a collection
+            this.set({'items': new Items(options.modules)});
         }
     });
     return Model;

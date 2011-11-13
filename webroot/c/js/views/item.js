@@ -1,5 +1,7 @@
 define(['models/item'], function(Item){
     var View = Backbone.View.extend({
+        tagName: 'div',
+        className: 'module',
         model: Item,
         initialize: function(options) {
           if (this.model.get('update') > 0) {
@@ -11,9 +13,15 @@ define(['models/item'], function(Item){
         },
 
         render: function(id) {
+            var $el = $(this.el).css({
+                'width' : this.model.get('width'),
+                'height': this.model.get('height')
+            }).addClass(this.model.get('class'));
+
             $.get('modules/' + this.model.get('name') + '.module.php', this.model.get('args'), _.bind(function(data) {
-                $(this.el).html(data);
+                $el.html(data);
             }, this));
+            return this;
         }
     });
     return View;

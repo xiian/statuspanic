@@ -1,4 +1,4 @@
-define(['underscore','backbone', 'models/board', 'collections/items', 'views/items'], function(x,y,Board, Items, Items_View){
+define(['underscore','backbone', 'models/board', 'views/items'], function(x,y,Board, Items_View){
     var View = Backbone.View.extend({
         model: Board,
         initialize: function(options) {
@@ -6,24 +6,18 @@ define(['underscore','backbone', 'models/board', 'collections/items', 'views/ite
         },
         
         render: function() {
-            console.group('Views_Board:render', arguments);
-            console.debug(this);
-            
             // Set the title
             document.title = this.model.get('title');
             
             // Set the width
             this.container.css({'width': this.model.get('width')});
-            
-            var coll = new Items(this.model.get('modules'));
 
+            // Create the view
             new Items_View({
-                collection: coll,
-                el: this.container
+                collection: this.model.get('items'),
+                el: this.container,
+                template: $('<div class="module"></div>')
             }).render();
-            
-            
-            console.groupEnd();
         }
     });
     return View;

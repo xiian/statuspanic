@@ -1,4 +1,4 @@
-define(['collections/items','backbone', 'underscore'], function(Items){
+define(['collections/items'], function(Items){
     var Model = Backbone.Model.extend({
         defaults: {
             title: 'default statusboard title',

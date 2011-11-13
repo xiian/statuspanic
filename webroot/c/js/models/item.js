@@ -1,4 +1,4 @@
-define(['backbone', 'underscore'], function(){
+define([], function(){
     var Model = Backbone.Model.extend({
         defaults: {
             banana: 'yay',

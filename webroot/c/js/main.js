@@ -1,4 +1,4 @@
-require(['models/board','views/board', 'jquery','underscore','backbone'], function(Board, Board_View){
+require(['models/board','views/board', 'lib/jquery','lib/underscore','lib/backbone'], function(Board, Board_View){
     $.getJSON('/config.json', function(data){
         new Board_View({
             model: new Board(data),

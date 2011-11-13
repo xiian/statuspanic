@@ -1,4 +1,4 @@
-define(['underscore','backbone', 'models/board', 'views/items'], function(x,y,Board, Items_View){
+define(['models/board', 'views/items'], function(Board, Items_View){
     var View = Backbone.View.extend({
         model: Board,
         initialize: function(options) {

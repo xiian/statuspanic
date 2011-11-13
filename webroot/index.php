@@ -18,4 +18,4 @@ spl_autoload_register(function($class){
     }
 });
 
-include('../application/views/home.php');
+include('index.html');

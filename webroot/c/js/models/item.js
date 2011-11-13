@@ -8,6 +8,10 @@ define(['backbone', 'underscore'], function(){
         },
         initialize: function(options) {
             this.get('args')['width'] = options.width;
+        },
+
+        url: function(){
+            return 'modules/' + this.get('name') + '.module.php';
         }
     });
     return Model;

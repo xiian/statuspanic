@@ -18,7 +18,7 @@ define(['models/item'], function(Item){
                 'height': this.model.get('height')
             }).addClass(this.model.get('class'));
 
-            $.get('modules/' + this.model.get('name') + '.module.php', this.model.get('args'), _.bind(function(data) {
+            $.get(this.model.url(), this.model.get('args'), _.bind(function(data) {
                 $el.html(data);
             }, this));
             return this;

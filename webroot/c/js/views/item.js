@@ -2,11 +2,11 @@ define(['models/item'], function(Item){
     var View = Backbone.View.extend({
         model: Item,
         initialize: function(options) {
-          if (options.update > 0) {
+          if (this.model.get('update') > 0) {
               var that = this;
               setInterval(function(){
                   that.render();
-              }, (options.update * 1000));
+              }, (this.model.get('update') * 1000));
           }
         },
 

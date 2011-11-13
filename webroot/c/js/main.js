@@ -15,27 +15,26 @@ require(['views/board', 'collections/items', 'models/item', 'views/item','jquery
         }
         board.css({'width': width});
 
+        var coll = new Items(data.modules);
+
         // Load the modules
         var moduleMarkup = $('<div class="module"></div>');
-        _.each(data.modules, function(item){
-            var thisId = item['name'] + '_' + modNumber++,
+        coll.each(function(item){
+            var thisId = item.get('name') + '_' + modNumber++,
                 css = {
-                    'width': item.width
+                    'width': item.get('width')
                 };
 
             var mu = moduleMarkup.clone();
-            if (item['class']) {
-                mu.addClass(item['class']);
+            if (item.get('class')) {
+                mu.addClass(item.get('class'));
             }
             mu.attr('id', thisId);
             mu.css(css);
             board.append(mu);
 
-
-            var module = new Item(item);
-
             new Item_View({
-                'model': module,
+                'model': item,
                 'el'   : mu,
                 'thisid' : thisId,
                 'name': item['name'],

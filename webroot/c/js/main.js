@@ -39,18 +39,27 @@ require(['jquery','underscore','backbone'], function(){
             mu.attr('id', thisId);
             mu.css(css);
             board.append(mu);
-            Module.activate(thisId, item['name'], item.update, item.args);
+            var module = new Module({
+                'thisid' : thisId,
+                'name': item['name'],
+                'update': item.update,
+                'args': item.args
+            });
+            // Module.initialize(thisId, item['name'], item.update, item.args);
         });
     });
 
-    var Module = {
-        init: function(name) {},
-
-        activate: function(id, name, seconds, args) {
-          Module.render(id, name, args, 1);
+    var Module = Backbone.View.extend({
+        initialize: function(options) {
+            var id = options.thisid,
+                name = options.name,
+                args = options.args,
+                seconds = options.update;
+          this.render(id, name, args, 1);
           if (seconds > 0) {
+              var that = this;
               setInterval(function(){
-                  Module.render(id, name, args, 0);
+                  that.render(id, name, args, 0);
               }, (seconds * 1000));
           }
         },
@@ -58,10 +67,8 @@ require(['jquery','underscore','backbone'], function(){
         render: function(id, name, args, firstrun) {
             $.get('modules/' + name + '.module.php', args, function(data) {
                 $('#' + id).html(data);
-                if (firstrun==1) {
-                    Module.init(name);
-                }
             });
         }
-    };
+    });
+
 });

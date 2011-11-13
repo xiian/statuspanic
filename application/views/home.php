@@ -30,9 +30,9 @@ $title = (isset($data->title) ? $data->title : 'statuspanic generic status board
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <title><?php echo $title; ?></title>
-    <link rel='stylesheet' type='text/css' href='resources/css/panic.css' />
-    <script type='text/javascript' src='resources/js/jquery.js'></script>
-    <script type='text/javascript' src='resources/js/board.js'></script>
+    <link rel='stylesheet' type='text/css' href='c/css/panic.css' />
+    <script type='text/javascript' src='c/js/jquery.js'></script>
+    <script type='text/javascript' src='c/js/board.js'></script>
     <style type='text/css'>
         #board {
             <?php

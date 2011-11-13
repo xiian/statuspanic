@@ -1,4 +1,4 @@
-require(['jquery','underscore','backbone'], function(){
+require(['views/board', 'models/module', 'views/module','jquery','underscore','backbone'], function(Board, Module, Module_View){
     $.getJSON('/config.json', function(data){
         var board = $('#board'),
             modNumber = 0;
@@ -22,15 +22,6 @@ require(['jquery','underscore','backbone'], function(){
                 css = {
                     'width': item.width
                 };
-            // Add the width to the args
-            if (item.args && item.width) {
-                item.args.width = item.width;
-            }
-
-            // Set the height
-            if (item.height) {
-                css.height = item.height;
-            }
 
             var mu = moduleMarkup.clone();
             if (item['class']) {
@@ -39,36 +30,18 @@ require(['jquery','underscore','backbone'], function(){
             mu.attr('id', thisId);
             mu.css(css);
             board.append(mu);
-            var module = new Module({
+
+
+            var module = new Module(item);
+
+            new Module_View({
+                'model': module,
+                'el'   : mu,
                 'thisid' : thisId,
                 'name': item['name'],
                 'update': item.update,
                 'args': item.args
-            });
-            // Module.initialize(thisId, item['name'], item.update, item.args);
+            }).render();
         });
     });
-
-    var Module = Backbone.View.extend({
-        initialize: function(options) {
-            var id = options.thisid,
-                name = options.name,
-                args = options.args,
-                seconds = options.update;
-          this.render(id, name, args, 1);
-          if (seconds > 0) {
-              var that = this;
-              setInterval(function(){
-                  that.render(id, name, args, 0);
-              }, (seconds * 1000));
-          }
-        },
-
-        render: function(id, name, args, firstrun) {
-            $.get('modules/' + name + '.module.php', args, function(data) {
-                $('#' + id).html(data);
-            });
-        }
-    });
-
 });

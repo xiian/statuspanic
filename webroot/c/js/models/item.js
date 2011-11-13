@@ -1,5 +1,5 @@
 define(['backbone', 'underscore'], function(){
-    var Module = Backbone.Model.extend({
+    var Model = Backbone.Model.extend({
         defaults: {
             update: 300,
             width: 980,
@@ -9,5 +9,5 @@ define(['backbone', 'underscore'], function(){
             this.get('args')['width'] = options.width;
         }
     });
-    return Module;
+    return Model;
 });

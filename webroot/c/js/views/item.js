@@ -1,6 +1,6 @@
-define(['models/module'], function(Module){
+define(['models/item'], function(Item){
     var View = Backbone.View.extend({
-        model: Module,
+        model: Item,
         initialize: function(options) {
           if (options.update > 0) {
               var that = this;

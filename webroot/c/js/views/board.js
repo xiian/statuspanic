@@ -1,4 +1,4 @@
-define(['models/module', 'views/module'], function(){
+define(['models/item', 'views/item'], function(){
     var View = Backbone.View.extend({
         initialize: function(options) {
         },

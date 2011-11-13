@@ -1,4 +1,4 @@
-require(['views/board', 'models/module', 'views/module','jquery','underscore','backbone'], function(Board, Module, Module_View){
+require(['views/board', 'collections/items', 'models/item', 'views/item','jquery','underscore','backbone'], function(Board, Items, Item, Item_View){
     $.getJSON('/config.json', function(data){
         var board = $('#board'),
             modNumber = 0;
@@ -32,9 +32,9 @@ require(['views/board', 'models/module', 'views/module','jquery','underscore','b
             board.append(mu);
 
 
-            var module = new Module(item);
+            var module = new Item(item);
 
-            new Module_View({
+            new Item_View({
                 'model': module,
                 'el'   : mu,
                 'thisid' : thisId,

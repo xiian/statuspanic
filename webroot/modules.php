@@ -10,7 +10,8 @@ spl_autoload_register(function($class){
 
 // Hacky way to get to this
 if (substr($_SERVER['REQUEST_URI'], 0, 8) == '/modules') {
-    require('../application' . $_SERVER['SCRIPT_URL']);
+    $script = parse_url($_SERVER['REQUEST_URI']);
+    require('../application' . $script['path']);
 } else {
     header('HTTP/1.1 404 Not Found');
 }

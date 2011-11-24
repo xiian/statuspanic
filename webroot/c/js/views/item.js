@@ -10,7 +10,12 @@ define(['models/item'], function(Item){
                   this.render();
               }, this), (this.model.get('update') * 1000));
           }
+
+          // Call sub initializers
+          this._initialize();
         },
+
+        _initialize: function(){},
 
         render: function(id) {
             var $el = $(this.el).css({

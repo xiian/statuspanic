@@ -19,9 +19,13 @@ define(['models/item'], function(Item){
             }).addClass(this.model.get('class'));
 
             $.get(this.model.url(), this.model.get('args'), _.bind(function(data) {
-                $el.html(data);
+                this.handleData(data);
             }, this));
             return this;
+        },
+
+        handleData: function(data) {
+          $(this.el).html(data);
         }
     });
     return View;

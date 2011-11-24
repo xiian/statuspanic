@@ -34,16 +34,11 @@ function getData() {
 
 /* DISPLAY */
 $data = getData();
-?>
 
-<div>
-    <table border="0" width="100%" cellpadding="0" cellspacing="10">
-    <?php foreach($data as $row): ?>
-        <tr>
-        <?php foreach($row as $cell): ?>
-            <td><?php echo $cell; ?></td>
-        <?php endforeach; ?>
-        </tr>
-    <?php endforeach; ?>
-    </table>
-</div>
+// Determine if it should be JSON
+if (isset($_GET['fmt']) && $_GET['fmt'] == 'json') {
+  header('Content-type: application/json');
+  echo json_encode($data);
+} else {
+  include('../application/views/grid.phtml');
+}

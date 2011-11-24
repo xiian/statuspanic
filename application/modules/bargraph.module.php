@@ -14,4 +14,8 @@ $bars->setDefaultPadding(12);
 $bars->setMaxWidth($_GET['width']);
 $bars->setMaxHeight($_GET['height']);
 
+// Prep the data
+$data = new StdClass();
+$data->bars = $bars;
+
 include('../application/views/bargraph.phtml');

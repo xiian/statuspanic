@@ -1,6 +1,6 @@
 <div>
     <div class="bars">
-        <?php foreach($bars as $bar) { ?>
+        <?php foreach($data->bars as $bar) { ?>
             <div class="bar" style="<?php echo $bar->getBarStyle(); ?>">
                 <div class="header">
                     <span class="total"><?php echo $bar->height; ?></span>
@@ -11,7 +11,7 @@
             </div>
         <?php } ?>
     </div>
-        <?php foreach($bars as $bar) { ?>
+        <?php foreach($data->bars as $bar) { ?>
             <div class="bar-title" style="<?php echo $bar->getLegendStyle(); ?>">
                 <span class="title">
                     <?php echo $bar->name ?>

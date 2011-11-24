@@ -4,11 +4,11 @@ define(['models/item'], function(Item){
         className: 'module',
         model: Item,
         initialize: function(options) {
+          // Set up the automatic update, if needed
           if (this.model.get('update') > 0) {
-              var that = this;
-              setInterval(function(){
-                  that.render();
-              }, (this.model.get('update') * 1000));
+              setInterval(_.bind(function(){
+                  this.render();
+              }, this), (this.model.get('update') * 1000));
           }
         },
 

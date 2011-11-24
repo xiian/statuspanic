@@ -1,10 +1,12 @@
-define(['models/item', 'views/item'], function(Item, Item_View){
+define(['models/item'], function(Item){
     var View = Backbone.View.extend({
         addOne: function(item) {
-            var element = new Item_View({
-                'model': item
-            }).render().el;
-            this.el.append(element);
+            require(['views/item/' + item.get('name')], _.bind(function(Item_View){
+                var element = new Item_View({
+                    'model': item
+                }).render().el;
+                this.el.append(element);
+            }, this));
         },
 
         render: function() {

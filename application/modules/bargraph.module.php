@@ -15,7 +15,13 @@ $bars->setMaxWidth($_GET['width']);
 $bars->setMaxHeight($_GET['height']);
 
 // Prep the data
-$data = new StdClass();
-$data->bars = $bars;
+$data         = new StdClass();
+$data->height = $bars->getMaxHeight();
+$data->bars   = $bars->getCollection();
 
-include('../application/views/bargraph.phtml');
+if (isset($_GET['fmt']) && $_GET['fmt'] == 'json') {
+  header('Content-type: application/json');
+  echo json_encode($data);
+} else {
+  include('../application/views/bargraph.phtml');
+}

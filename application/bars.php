@@ -14,6 +14,10 @@ class Bars extends Collection {
         $this->tryNewMaxBarHeight($bar->height);
     }
 
+    public function getCollection() {
+      return $this->coll;
+    }
+
     public function tryNewMaxBarHeight($height) {
         if ($height > $this->maxBarHeight) {
             $this->maxBarHeight = $height;

@@ -17,6 +17,7 @@ $bars->setMaxHeight($_GET['height']);
 // Prep the data
 $data         = new StdClass();
 $data->height = $bars->getMaxHeight();
+$data->width  = $bars->getMaxHeight();
 $data->bars   = $bars->getCollection();
 
 if (isset($_GET['fmt']) && $_GET['fmt'] == 'json') {

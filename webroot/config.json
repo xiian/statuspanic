@@ -28,7 +28,7 @@
       }
     },
     {
-     "name": "clock",
+      "name": "clock",
       "class": "mini middle",
       "width": 225,
       "height": 120,
@@ -36,11 +36,11 @@
       "args": {
         "timezone": "America/Los_Angeles",
         "format": "h:i a",
-		"label": "LA"
+		    "label": "LA"
       }
     },
     {
-     "name": "clock",
+      "name": "clock",
       "class": "mini middle",
       "width": 225,
       "height": 120,
@@ -48,11 +48,11 @@
       "args": {
         "timezone": "America/New_York",
         "format": "h:i a",
-		"label": "NYC"
+		    "label": "NYC"
       }
     },
-	{
-     "name": "clock",
+	  {
+      "name": "clock",
       "class": "mini middle",
       "width": 225,
       "height": 120,
@@ -60,11 +60,11 @@
       "args": {
         "timezone": "Europe/London",
         "format": "h:i a",
-		"label": "London"
+		    "label": "London"
       }
     },
     {
-     "name": "clock",
+      "name": "clock",
       "class": "mini middle",
       "width": 225,
       "height": 120,
@@ -72,7 +72,7 @@
       "args": {
         "timezone": "Australia/Sydney",
         "format": "h:i a",
-		"label": "Sydney"
+		    "label": "Sydney"
       }
     },
     {

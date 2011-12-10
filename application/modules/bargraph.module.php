@@ -3,10 +3,10 @@
 /* DATA */
 $max = rand(3, 100);
 $bars = new Bars();
-$bars->add(new Bar('NEW',            18,   1));
-$bars->add(new Bar('DEV COMP',       48,   3));
+$bars->add(new Bar('Development',    18,   1));
+$bars->add(new Bar('Dev Complete',   48,   3));
 $bars->add(new Bar('QA',             8,    2));
-$bars->add(new Bar('VALIDATION',     rand(1,15),   2));
+$bars->add(new Bar('Validation',     rand(1,15),   2));
 
 // change these
 $bars->setMaxBarWidth(300);

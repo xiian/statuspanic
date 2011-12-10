@@ -6,10 +6,14 @@ class Bar {
      */
     protected $container;
 
-    function __construct($name, $height, $remaining) {
-        $this->name = $name;
-        $this->height = $height;
-        $this->remaining = $remaining;
+    public $title;
+    public $total;
+    public $complete;
+
+    function __construct($title, $total, $complete) {
+        $this->title = $title;
+        $this->total = $total;
+        $this->complete = $complete;
     }
 
     public function setContainer(Bars $bars) {
@@ -17,7 +21,7 @@ class Bar {
     }
 
     public function getHeight() {
-        return floor(($this->height / $this->container->getMaxBarHeight()) * $this->container->getMaxHeight());
+        return floor(($this->total / $this->container->getMaxBarHeight()) * $this->container->getMaxHeight());
     }
 
     public function getBarStyle() {

@@ -11,7 +11,7 @@ class Bars extends Collection {
     public function add(Bar $bar) {
         parent::add($bar);
         $bar->setContainer($this);
-        $this->tryNewMaxBarHeight($bar->height);
+        $this->tryNewMaxBarHeight($bar->total);
     }
 
     public function getCollection() {

@@ -119,27 +119,6 @@ define(['views/item'], function(Base_View){
       },
 
       handleData: function(data){
-        // Override of data, for now
-        data = {
-          sets: [
-            {
-              total: 100,
-              complete: 99,
-              title: 'one'
-            },
-            {
-              total: 123,
-              complete: 0,
-              title: 'two'
-            },
-            {
-              total: 321,
-              complete: 105,
-              title: 'three'
-            }
-          ]
-        };
-
         var BarsView = new Bars_View({
           collection: new Bars(data.sets),
           maxHeight : this.model.get('args').height,

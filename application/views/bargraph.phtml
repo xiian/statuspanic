@@ -1,20 +1,20 @@
 <div>
     <div class="bars">
-        <?php foreach($data->bars as $bar) { ?>
+        <?php foreach($data->sets as $bar) { ?>
             <div class="bar" style="<?php echo $bar->getBarStyle(); ?>">
                 <div class="header">
-                    <span class="total"><?php echo $bar->height; ?></span>
+                    <span class="complete"><?php echo $bar->complete; ?></span>
                     /
-                    <span class="remaining"><?php echo $bar->remaining; ?></span>
+                    <span class="total"><?php echo $bar->total; ?></span>
                 </div>
                 <div class="view" style="height: <?php echo $bar->getHeight(); ?>px;"></div>
             </div>
         <?php } ?>
     </div>
-        <?php foreach($data->bars as $bar) { ?>
+        <?php foreach($data->sets as $bar) { ?>
             <div class="bar-title" style="<?php echo $bar->getLegendStyle(); ?>">
                 <span class="title">
-                    <?php echo $bar->name ?>
+                    <?php echo $bar->title; ?>
                 </span>
             </div>
         <?php } ?>

@@ -15,6 +15,9 @@ define([], function(){
         },
 
         url: function(){
+            if (this.get('url')) {
+              return this.get('url');
+            }
             return 'modules/' + this.get('type') + '.module.php';
         }
     });

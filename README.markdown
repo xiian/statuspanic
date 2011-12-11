@@ -6,8 +6,6 @@ Configuration
 ====================
 Configuring StatusPanic is basically the first and last step of getting it running. Currently, to provide data to modules you must edit them manually. In future releases this might be changed, but that's how it works for now. Other options are specified in [JSON](http://en.wikipedia.org/wiki/JSON) format in a file called [config.json](http://github.com/ajb/statuspanic/blob/master/config.json). If you check out this file you can see how it's set up. You can assume that all options are required at this point. Args can be provided to a module via a GET request by adding them to an ARGS array.
 
-Of special note is the 'rotate' option. You may specify this to 'left', 'right', or 'no' to rotate the whole display with CSS. This lets you display it on a vertical monitor on a system that doesn't support such things. This option is experimental and doesn't work very well.
-
 An 'update' of 0 indicates that module doesn't require updates, and thus whatever is loaded the first time is what remains.
 
 How It Works

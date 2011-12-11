@@ -4,27 +4,27 @@
   "modules": [
     {
       "type": "bargraph",
+      "update": 150,
       "dimensions": {
         "width": 980
       },
-      "update": 150,
       "args": {
         "height": 300
       }
     },
     {
       "type": "grid",
+      "update": 300,
       "dimensions": {
         "width": 980
-      },
-      "update": 300
+      }
     },
     {
       "type": "countdown",
+      "update": 3600,
       "dimensions": {
         "width": 980
       },
-      "update": 3600,
       "args": {
         "event": "UNTIL 3.0",
         "stop": 1321971459,
@@ -34,11 +34,11 @@
     {
       "type": "clock",
       "class": "mini",
+      "update": 60,
       "dimensions": {
         "width": 225,
         "height": 120
       },
-      "update": 60,
       "args": {
         "timezone": "America/Los_Angeles",
         "format": "h:i a",
@@ -48,11 +48,11 @@
     {
       "type": "clock",
       "class": "mini",
+      "update": 60,
       "dimensions": {
         "width": 225,
         "height": 120
       },
-      "update": 60,
       "args": {
         "timezone": "America/New_York",
         "format": "h:i a",
@@ -62,11 +62,11 @@
 	  {
       "type": "clock",
       "class": "mini",
+      "update": 60,
       "dimensions": {
         "width": 225,
         "height": 120
       },
-      "update": 60,
       "args": {
         "timezone": "Europe/London",
         "format": "h:i a",
@@ -76,11 +76,11 @@
     {
       "type": "clock",
       "class": "mini",
+      "update": 60,
       "dimensions": {
         "width": 225,
         "height": 120
       },
-      "update": 60,
       "args": {
         "timezone": "Australia/Sydney",
         "format": "h:i a",
@@ -90,21 +90,21 @@
     {
       "type": "weather",
       "class": "mini",
+      "update": 3600,
       "dimensions": {
         "width": 960,
         "height": 120
       },
-      "update": 3600,
       "args": {
         "zipcode": "10017"
       }
     },
     {
       "type": "space",
+      "update": 0,
       "dimensions": {
         "width": 300
-      },
-      "update": 0
+      }
     }
   ]
 }

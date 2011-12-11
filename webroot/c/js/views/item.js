@@ -8,7 +8,7 @@ define(['models/item'], function(Item){
           clearInterval(this.interval);
 
           // If we're setting it this low, we're actually just cancelling
-          if (seconds <= 0) {
+          if (seconds <= 0 || !seconds) {
             return true;
           }
 
@@ -19,10 +19,10 @@ define(['models/item'], function(Item){
         },
 
         initialize: function(options) {
-          // Set up the automatic update, if needed
-          if (this.model.get('update') > 0) {
-            this.setUpdate(this.model.get('update'));
-          }
+          // Bind the update values
+          this.model.bind('change:update',_.bind(function(item, val){
+            this.setUpdate(val);
+          }, this)).trigger('change:update');
 
           // Call sub initializers
           this._initialize();

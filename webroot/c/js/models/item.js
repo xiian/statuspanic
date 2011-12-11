@@ -10,7 +10,7 @@ define([], function(){
         },
 
         url: function(){
-            return 'modules/' + this.get('name') + '.module.php';
+            return 'modules/' + this.get('type') + '.module.php';
         }
     });
     return Model;

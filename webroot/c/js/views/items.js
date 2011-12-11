@@ -3,7 +3,7 @@ define(['models/item'], function(Item){
         addOne: function(item) {
           var placeholder = $('<div></div>');
           this.el.append(placeholder);
-            require(['views/item/' + item.get('name')], _.bind(function(Item_View){
+            require(['views/item/' + item.get('type')], _.bind(function(Item_View){
                 var element = new Item_View({
                     'model': item
                 }).render().el;

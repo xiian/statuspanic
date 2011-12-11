@@ -3,7 +3,7 @@
   "title": "Status Board",
   "modules": [
     {
-      "name": "bargraph",
+      "type": "bargraph",
       "width": 980,
       "update": 150,
       "class": "middle",
@@ -12,12 +12,12 @@
       }
     },
     {
-      "name": "grid",
+      "type": "grid",
       "width": 980,
       "update": 300
     },
     {
-      "name": "countdown",
+      "type": "countdown",
       "width": 980,
       "update": 3600,
       "args": {
@@ -27,7 +27,7 @@
       }
     },
     {
-      "name": "clock",
+      "type": "clock",
       "class": "mini middle",
       "width": 225,
       "height": 120,
@@ -39,7 +39,7 @@
       }
     },
     {
-      "name": "clock",
+      "type": "clock",
       "class": "mini middle",
       "width": 225,
       "height": 120,
@@ -51,7 +51,7 @@
       }
     },
 	  {
-      "name": "clock",
+      "type": "clock",
       "class": "mini middle",
       "width": 225,
       "height": 120,
@@ -63,7 +63,7 @@
       }
     },
     {
-      "name": "clock",
+      "type": "clock",
       "class": "mini middle",
       "width": 225,
       "height": 120,
@@ -75,7 +75,7 @@
       }
     },
     {
-      "name": "weather",
+      "type": "weather",
       "class": "mini middle",
       "width": 960,
       "height": 120,
@@ -85,7 +85,7 @@
       }
     },
     {
-      "name": "space",
+      "type": "space",
       "width": 300,
       "update": 0
     }

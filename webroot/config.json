@@ -4,7 +4,9 @@
   "modules": [
     {
       "type": "bargraph",
-      "width": 980,
+      "dimensions": {
+        "width": 980
+      },
       "update": 150,
       "class": "middle",
       "args": {
@@ -13,12 +15,16 @@
     },
     {
       "type": "grid",
-      "width": 980,
+      "dimensions": {
+        "width": 980
+      },
       "update": 300
     },
     {
       "type": "countdown",
-      "width": 980,
+      "dimensions": {
+        "width": 980
+      },
       "update": 3600,
       "args": {
         "event": "UNTIL 3.0",
@@ -29,8 +35,10 @@
     {
       "type": "clock",
       "class": "mini middle",
-      "width": 225,
-      "height": 120,
+      "dimensions": {
+        "width": 225,
+        "height": 120
+      },
       "update": 60,
       "args": {
         "timezone": "America/Los_Angeles",
@@ -41,8 +49,10 @@
     {
       "type": "clock",
       "class": "mini middle",
-      "width": 225,
-      "height": 120,
+      "dimensions": {
+        "width": 225,
+        "height": 120
+      },
       "update": 60,
       "args": {
         "timezone": "America/New_York",
@@ -53,8 +63,10 @@
 	  {
       "type": "clock",
       "class": "mini middle",
-      "width": 225,
-      "height": 120,
+      "dimensions": {
+        "width": 225,
+        "height": 120
+      },
       "update": 60,
       "args": {
         "timezone": "Europe/London",
@@ -65,8 +77,10 @@
     {
       "type": "clock",
       "class": "mini middle",
-      "width": 225,
-      "height": 120,
+      "dimensions": {
+        "width": 225,
+        "height": 120
+      },
       "update": 60,
       "args": {
         "timezone": "Australia/Sydney",
@@ -77,8 +91,10 @@
     {
       "type": "weather",
       "class": "mini middle",
-      "width": 960,
-      "height": 120,
+      "dimensions": {
+        "width": 960,
+        "height": 120
+      },
       "update": 3600,
       "args": {
         "zipcode": "10017"
@@ -86,7 +102,9 @@
     },
     {
       "type": "space",
-      "width": 300,
+      "dimensions": {
+        "width": 300
+      },
       "update": 0
     }
   ]

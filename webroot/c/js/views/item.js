@@ -19,8 +19,8 @@ define(['models/item'], function(Item){
 
         render: function(id) {
             var $el = $(this.el).css({
-                'width' : this.model.get('width'),
-                'height': this.model.get('height')
+                'width' : this.model.get('dimensions').width,
+                'height': this.model.get('dimensions').height
             }).addClass(this.model.get('class'))
             .attr({'title': this.model.get('title')});
 

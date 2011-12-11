@@ -27,7 +27,7 @@
       },
       "args": {
         "event": "UNTIL 3.0",
-        "stop": 1321971459,
+        "stop": "January 1, 2012",
         "timezone": "America/New_York"
       }
     },

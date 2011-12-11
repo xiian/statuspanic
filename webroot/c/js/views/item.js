@@ -21,7 +21,8 @@ define(['models/item'], function(Item){
             var $el = $(this.el).css({
                 'width' : this.model.get('width'),
                 'height': this.model.get('height')
-            }).addClass(this.model.get('class'));
+            }).addClass(this.model.get('class'))
+            .attr({'title': this.model.get('title')});
 
             $.get(this.model.url(), this.model.get('args'), _.bind(function(data) {
                 this.handleData(data);

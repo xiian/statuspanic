@@ -6,7 +6,7 @@ $bars = new Bars();
 $bars->add(new Bar('Development',    18,   1));
 $bars->add(new Bar('Dev Complete',   48,   3));
 $bars->add(new Bar('QA',             8,    2));
-$bars->add(new Bar('Validation',     rand(1,15),   2));
+$bars->add(new Bar('Validation',     rand(2,15),   2));
 
 // change these
 $bars->setMaxBarWidth(300);

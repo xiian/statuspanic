@@ -3,12 +3,25 @@ define(['models/item'], function(Item){
         tagName: 'div',
         className: 'module',
         model: Item,
+        setUpdate: function(seconds) {
+          // Clear the interval that's been set
+          clearInterval(this.interval);
+
+          // If we're setting it this low, we're actually just cancelling
+          if (seconds <= 0) {
+            return true;
+          }
+
+          // Set a new interval
+          this.interval = setInterval(_.bind(function(){
+            this.render();
+          }, this), seconds * 1000);
+        },
+
         initialize: function(options) {
           // Set up the automatic update, if needed
           if (this.model.get('update') > 0) {
-              setInterval(_.bind(function(){
-                  this.render();
-              }, this), (this.model.get('update') * 1000));
+            this.setUpdate(this.model.get('update'));
           }
 
           // Call sub initializers

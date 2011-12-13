@@ -421,5 +421,24 @@ time {
 	display: block;
 }
 
+#overlay {
+  position: absolute;
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 101;
+}
+#overlay span {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  color: black;
+  font-size: 3em;
+}
 /* @end */
 

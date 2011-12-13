@@ -4,19 +4,61 @@ define(['views/item', 'lib/date', 'lib/time'], function(Base_View){
     };
 
     var View = Base_View.extend({
+      defaults: {
+        'completion': 'Hooray!',
+        'throb'     : 3,
+        'counted'   : false
+      },
       templates: {
-        'active'  : _.template('<div class="mega"><%=label%> <span class="event"><%=title%></span></div>'),
-        'complete': _.template('<div class="mega"><div class="star"><span class="top"></span><span class="center"></span><span class="bottom"></span><span class="text">!</span></div> <%=completion%></div>')
+        'active'   : _.template('<div class="mega"><%=label%> <span class="event"><%=title%></span></div>'),
+        'complete' : _.template('<div class="mega"><div class="star"><span class="top"></span><span class="center"></span><span class="bottom"></span><span class="text">!</span></div> <%=completion%></div>'),
+        'celebrate': _.template('<div id="overlay"><span><%=completion%></span></div>')
+      },
+      _initialize: function(){
+        this.stop = Date.parse(this.model.get('args').stop);
+      },
+      celebrate: function(){
+        if (!this.defaults.counted) {
+          return true;
+        }
+        var overlay = $(this.templates.celebrate({
+          'completion': this.model.get('args').completion || this.defaults.completion
+        }));
+
+        $('body').prepend(overlay);
+
+        // Fix positioning
+        overlay.find('span').css({
+          'margin-left': function(){
+            return -1 * ( $(this).width() / 2 );
+          }
+        }).end().hide();
+
+        // Animate
+        var speed = 1000,
+            count = this.defaults.throb,
+            cb = function(){
+              var $this = $(this);
+              if (count == 0) {
+                $this.remove();
+                return true;
+              }
+              count--;
+              $this.fadeIn(speed, function(){
+                $this.fadeOut(speed, _.bind(cb, this));
+              });
+            };
+        overlay.fadeOut(speed, cb);
       },
       render: function(id) {
           // Initialize
-          var diff     = new TimeSpan(Date.parse(this.model.get('args').stop) - new Date()),
+          var diff     = new TimeSpan(Date.parse(this.stop) - new Date()),
               update   = 0,
               template = this.templates.complete,
               params   = {
                 'label'     : '',
                 'title'     : this.model.get('args').title,
-                'completion': this.model.get('args').completion || 'woo hoo'
+                'completion': this.model.get('args').completion || this.defaults.completion
               };
 
           // Determine the label
@@ -39,7 +81,11 @@ define(['views/item', 'lib/date', 'lib/time'], function(Base_View){
               params.label = plural(diff.seconds,'second');
               update = 1;
             }
+          } else {
+            this.celebrate();
           }
+          // Mark it as something we've counted
+          this.defaults.counted = true;
 
           // Update the updater
           this.model.set({'update': update});

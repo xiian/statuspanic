@@ -39,7 +39,7 @@ define(['views/item', 'lib/date', 'lib/time'], function(Base_View){
             count = this.defaults.throb,
             cb = function(){
               var $this = $(this);
-              if (count == 0) {
+              if (count === 0) {
                 $this.remove();
                 return true;
               }

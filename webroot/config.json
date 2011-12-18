@@ -26,7 +26,7 @@
         "width": 980
       },
       "args": {
-        "event": "UNTIL 3.0",
+        "title": "until 3.0",
         "stop": "January 1, 2012",
         "timezone": "America/New_York"
       }

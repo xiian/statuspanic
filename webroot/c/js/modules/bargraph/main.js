@@ -1,4 +1,4 @@
-define(['views/item'], function(Base_View){
+define(['views/item', 'models/item'], function(Base_View, Model){
     var Bar = Backbone.Model.extend({
       defaults: {
         'title'   : 'DEFAULT TITLE',
@@ -129,5 +129,8 @@ define(['views/item'], function(Base_View){
         $(this.el).html(BarsView.render().el);
       }
     });
-    return View;
+    return {
+      view: View,
+      model: Model
+    };
 });

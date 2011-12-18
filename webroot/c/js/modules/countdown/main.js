@@ -1,4 +1,4 @@
-define(['views/item', 'lib/date', 'lib/time'], function(Base_View){
+define(['views/item', 'models/item', 'lib/date', 'lib/time'], function(Base_View, Model){
     var plural = function(num, singular, plural) {
       return num + ' ' + (num == 1 ? singular : (plural || singular + 's'));
     };
@@ -100,5 +100,8 @@ define(['views/item', 'lib/date', 'lib/time'], function(Base_View){
           return this;
       }
     });
-    return View;
+    return {
+      view: View,
+      model: Model
+    };
 });

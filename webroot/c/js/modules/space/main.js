@@ -1,5 +1,8 @@
-define(['views/item'], function(Base_View){
+define(['views/item', 'models/item'], function(Base_View, Model){
     var View = Base_View.extend({
     });
-    return View;
+    return {
+	    view: View,
+	    model: Model
+	};
 });

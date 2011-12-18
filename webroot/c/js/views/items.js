@@ -4,6 +4,9 @@ define(['models/item'], function(Item){
           var placeholder = $('<div></div>');
           this.el.append(placeholder);
             require(['c/js/modules/' + item.get('type') + '/main.js'], _.bind(function(Item_View){
+                if (Item_View.view) {
+                    Item_View = Item_View.view;
+                }
                 var element = new Item_View({
                     'model': item
                 }).render().el;

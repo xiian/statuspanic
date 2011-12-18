@@ -1,4 +1,4 @@
-define(['views/item'], function(Base_View){
+define(['views/item', 'models/item'], function(Base_View, Model){
     var View = Base_View.extend({
       templates: {
         container: $('<div><table border="0" width="100%" cellpadding="0" cellspacing="10"></table></div>'),
@@ -31,5 +31,8 @@ define(['views/item'], function(Base_View){
         $(this.el).html(html);
       }
     });
-    return View;
+    return {
+      view: View,
+      model: Model
+    };
 });
